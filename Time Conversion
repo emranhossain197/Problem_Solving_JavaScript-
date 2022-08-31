@@ -1,0 +1,29 @@
+// Given a time in -hour AM/PM format, convert it to military (24-hour) time.
+// Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+// - 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+function TimeConvert(s) {
+  let time = s.split(":")[2];
+  let n = time.split("");
+  let x = s.split(":");
+  let h = x[0];
+  let m = x[1];
+  let se = [n[0], n[1]].join("");
+  //   console.log(n);
+  if (n[2] === "A") {
+    if (h === '12') {
+        return `00:${m}:${se}`
+    }else{
+      return `${h}:${m}:${se}`
+    }
+    
+  } else if (n[2] === "P") {
+    if(h === "12"){
+      return `${h}:${m}:${se}`
+    }else{
+      return `${Number(h)+12}:${m}:${se}`
+    }
+    
+  }
+}
+console.log(TimeConvert("12:15:00PM"));
