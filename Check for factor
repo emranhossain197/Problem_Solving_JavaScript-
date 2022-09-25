@@ -5,3 +5,6 @@
 
 const checkForFactor =( base, factor) => base % factor === 0 ? true : false;
 console.log(checkForFactor(2450,5));
+
+
+// This project solve 
