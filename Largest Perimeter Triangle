@@ -1,0 +1,14 @@
+const largestPerimeter = (arr) => {
+  let n = arr.sort((a, b) => a - b);
+  for (let i = n.length - 1; i >= 2; i--) {
+    let a = i - 2;
+    let b = i - 1;
+    let c = i;
+   if(n[c] < n[b] + n[a] ){
+    return n[c]+ n[b] + n[a]
+   }
+  }
+  return 0;
+};
+
+console.log(largestPerimeter([3,2,3,4]));
